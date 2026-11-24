@@ -7,7 +7,10 @@ def classificar_confianca(nota):
     """Transforma a nota de confiança (1 a 5) em um texto, usando if/elif/else.
 
     Retorno: 'baixa', 'média' ou 'alta'.
+    ValueError se a nota estiver fora do intervalo de 0 a 5.
     """
+    if nota < 0 or nota > 5:
+        raise ValueError("A nota de confiança deve estar entre 0 e 5.")
     if nota < 2.5:
         return "baixa"
     elif nota < 4:
